@@ -38,37 +38,84 @@
             font-size: 0.9em;
             color: #888;
         }
+        .lang-switcher {
+            margin-top: 20px;
+        }
+        button {
+            background-color: #ffd700;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>🚀 My First Million Token (MFM)</h1>
+        <div class="lang-switcher">
+            <button onclick="switchLang('de')">🇩🇪 Deutsch</button>
+            <button onclick="switchLang('en')">🇬🇧 English</button>
+        </div>
     </header>
 
-    <div class="content">
-        <img src="logo.png" alt="MFM Logo">
-        <h2>Ein exklusiver Meme-Coin mit Potenzial</h2>
-        <p>
-            <strong>MFM</strong> steht für "My First Million" – der Spaßcoin mit ernstem Anspruch.<br>
-            Mit einer limitierten Gesamtmenge von 1.000.000.000 Token (1 Mrd.) und<br>
-            einem fesselnden Design bringt MFM frischen Wind in die Welt der Meme-Coins.
-        </p>
-
-        <h3>🔍 Fakten zum Token:</h3>
-        <ul style="text-align: left; display: inline-block; text-align: left;">
-            <li><strong>Name:</strong> My First Million</li>
-            <li><strong>Symbol:</strong> MFM</li>
-            <li><strong>Blockchain:</strong> Binance Smart Chain (BEP-20)</li>
-            <li><strong>Supply:</strong> 1.000.000.000 MFM</li>
-            <li><strong>0% Steuer:</strong> Keine Kauf-/Verkaufsgebühren</li>
-            <li><strong>20% Marketing- & Entwicklungs-Reserve</strong></li>
-        </ul>
-
-        <p><em>Initialen J.F. sind versteckt – kannst du sie entdecken? 😉</em></p>
+    <div class="content" id="content">
+        <!-- Inhalt wird durch JavaScript ersetzt -->
     </div>
 
     <footer>
         <p>© 2025 My First Million. Alle Rechte vorbehalten.</p>
     </footer>
+
+    <script>
+        const content = {
+            de: `
+                <img src="logo.png" alt="MFM Logo">
+                <h2>Ein exklusiver Meme-Coin mit Potenzial</h2>
+                <p>
+                    <strong>MFM</strong> steht für "My First Million" – der Spaßcoin mit ernstem Anspruch.<br>
+                    Mit einer limitierten Gesamtmenge von 1.000.000.000 Token (1 Mrd.) und<br>
+                    einem hochwertigen Design bringt MFM frischen Wind in die Welt der Meme-Coins.
+                </p>
+                <h3>🔍 Fakten zum Token:</h3>
+                <ul style="text-align: left; display: inline-block;">
+                    <li><strong>Name:</strong> My First Million</li>
+                    <li><strong>Symbol:</strong> MFM</li>
+                    <li><strong>Blockchain:</strong> Binance Smart Chain (BEP-20)</li>
+                    <li><strong>Supply:</strong> 1.000.000.000 MFM</li>
+                    <li><strong>0 % Steuer:</strong> Keine Kauf-/Verkaufsgebühren</li>
+                    <li><strong>20 % Marketing- & Entwicklungs-Reserve</strong></li>
+                </ul>
+                <p><em>Die Initialen J.F. sind subtil versteckt – findest du sie? 😉</em></p>
+            `,
+            en: `
+                <img src="logo.png" alt="MFM Logo">
+                <h2>An exclusive meme-coin with real potential</h2>
+                <p>
+                    <strong>MFM</strong> stands for "My First Million" – a fun token with serious ambitions.<br>
+                    With a limited supply of 1,000,000,000 tokens and a premium design,<br>
+                    MFM brings fresh energy to the meme-coin space.
+                </p>
+                <h3>🔍 Token Facts:</h3>
+                <ul style="text-align: left; display: inline-block;">
+                    <li><strong>Name:</strong> My First Million</li>
+                    <li><strong>Symbol:</strong> MFM</li>
+                    <li><strong>Blockchain:</strong> Binance Smart Chain (BEP-20)</li>
+                    <li><strong>Supply:</strong> 1,000,000,000 MFM</li>
+                    <li><strong>0% Tax:</strong> No buy/sell fees</li>
+                    <li><strong>20% Reserved for Marketing & Development</strong></li>
+                </ul>
+                <p><em>The initials J.F. are subtly hidden – can you spot them? 😉</em></p>
+            `
+        };
+
+        function switchLang(lang) {
+            document.getElementById('content').innerHTML = content[lang];
+        }
+
+        // Standardmäßig Deutsch laden
+        switchLang('de');
+    </script>
 </body>
 </html>
